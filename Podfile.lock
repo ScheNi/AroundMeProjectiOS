@@ -1,1 +1,25 @@
+PODS:
+  - Kingfisher (1.8.5)
+  - OAuthSwift (0.4.8)
+  - SwiftyJSON (2.3.2)
+
+DEPENDENCIES:
+  - Kingfisher (~> 1.8)
+  - OAuthSwift (~> 0.4.8)
+  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
+
+EXTERNAL SOURCES:
+  SwiftyJSON:
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+CHECKOUT OPTIONS:
+  SwiftyJSON:
+    :commit: 8e618c8baf6323a5079c6549bb38d48357b31630
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+SPEC CHECKSUMS:
+  Kingfisher: 780fed0fa82692a3bd59d53329ae2b85cdd354a5
+  OAuthSwift: 23bd4807a4fd9e54ef6e7c2b5875138819186d9a
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+
 COCOAPODS: 0.39.0

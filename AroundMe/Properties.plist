@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>baseUrl</key>
+	<string>https://api.yelp.com/v2/search</string>
+	<key>consumerKey</key>
+	<string>pc8EOxDq_FCJh2JHHqqlZw</string>
+	<key>consumerSecret</key>
+	<string>FkKFuFx-7gcRdZBqKYtXqrZqE88</string>
+	<key>token</key>
+	<string>pUqkywOuSWH3xWmF4rjgGALoclIRTZ_V</string>
+	<key>tokenSecret</key>
+	<string>u5UBhT4e8JIOMHsBu9cmVzq0fZw</string>
+</dict>
+</plist>

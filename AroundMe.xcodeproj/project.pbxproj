@@ -7,13 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		370303191C282A990061D2DB /* ParseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370303181C282A990061D2DB /* ParseService.swift */; settings = {ASSET_TAGS = (); }; };
+		37A0001B1C273E1A00815FA2 /* Properties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37A0001A1C273E1A00815FA2 /* Properties.plist */; settings = {ASSET_TAGS = (); }; };
+		37F26B3E1C26DBE000E3093F /* AroundMeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F26B3D1C26DBE000E3093F /* AroundMeTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		37F26B411C26DF0600E3093F /* AroundMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F26B401C26DF0600E3093F /* AroundMeTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		37F26B461C26E6B000E3093F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F26B451C26E6B000E3093F /* Location.swift */; settings = {ASSET_TAGS = (); }; };
+		37F26B481C26E6B900E3093F /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F26B471C26E6B900E3093F /* Business.swift */; settings = {ASSET_TAGS = (); }; };
+		37F26B4A1C272E6200E3093F /* OAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F26B491C272E6200E3093F /* OAuthService.swift */; settings = {ASSET_TAGS = (); }; };
 		37F3A3B61C25589300E03C36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F3A3B51C25589300E03C36 /* AppDelegate.swift */; };
-		37F3A3B81C25589300E03C36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F3A3B71C25589300E03C36 /* ViewController.swift */; };
 		37F3A3BB1C25589300E03C36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37F3A3B91C25589300E03C36 /* Main.storyboard */; };
 		37F3A3BD1C25589300E03C36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37F3A3BC1C25589300E03C36 /* Assets.xcassets */; };
 		37F3A3C01C25589300E03C36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37F3A3BE1C25589300E03C36 /* LaunchScreen.storyboard */; };
 		37F3A3CB1C25589300E03C36 /* AroundMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F3A3CA1C25589300E03C36 /* AroundMeTests.swift */; };
 		37F3A3D61C25589300E03C36 /* AroundMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F3A3D51C25589300E03C36 /* AroundMeUITests.swift */; };
+		C4A8B65A1D5652EB886718B7 /* Pods_AroundMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F1D0E2A52062FB5A269763 /* Pods_AroundMe.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +41,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22F1D0E2A52062FB5A269763 /* Pods_AroundMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AroundMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		370303181C282A990061D2DB /* ParseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseService.swift; sourceTree = "<group>"; };
+		37A0001A1C273E1A00815FA2 /* Properties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Properties.plist; sourceTree = "<group>"; };
+		37F26B3D1C26DBE000E3093F /* AroundMeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AroundMeTableViewController.swift; sourceTree = "<group>"; };
+		37F26B401C26DF0600E3093F /* AroundMeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AroundMeTableViewCell.swift; sourceTree = "<group>"; };
+		37F26B451C26E6B000E3093F /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		37F26B471C26E6B900E3093F /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
+		37F26B491C272E6200E3093F /* OAuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthService.swift; sourceTree = "<group>"; };
 		37F3A3B21C25589300E03C36 /* AroundMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AroundMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F3A3B51C25589300E03C36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		37F3A3B71C25589300E03C36 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		37F3A3BA1C25589300E03C36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		37F3A3BC1C25589300E03C36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37F3A3BF1C25589300E03C36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +61,8 @@
 		37F3A3D11C25589300E03C36 /* AroundMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AroundMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F3A3D51C25589300E03C36 /* AroundMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundMeUITests.swift; sourceTree = "<group>"; };
 		37F3A3D71C25589300E03C36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FF96ACD638A64664653B0C3 /* Pods-AroundMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AroundMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-AroundMe/Pods-AroundMe.release.xcconfig"; sourceTree = "<group>"; };
+		EBD01CB28693DA2A539A3A26 /* Pods-AroundMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AroundMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AroundMe/Pods-AroundMe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4A8B65A1D5652EB886718B7 /* Pods_AroundMe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +91,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B5329CCAC2B65778E6E0A04 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EBD01CB28693DA2A539A3A26 /* Pods-AroundMe.debug.xcconfig */,
+				7FF96ACD638A64664653B0C3 /* Pods-AroundMe.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		37F26B3F1C26DC0700E3093F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				37F26B3D1C26DBE000E3093F /* AroundMeTableViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		37F26B421C26E59400E3093F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				37F26B451C26E6B000E3093F /* Location.swift */,
+				37F26B471C26E6B900E3093F /* Business.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		37F26B431C26E59B00E3093F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				37F26B401C26DF0600E3093F /* AroundMeTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		37F26B441C26E61D00E3093F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				37F26B491C272E6200E3093F /* OAuthService.swift */,
+				370303181C282A990061D2DB /* ParseService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		37F3A3A91C25589300E03C36 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +141,8 @@
 				37F3A3C91C25589300E03C36 /* AroundMeTests */,
 				37F3A3D41C25589300E03C36 /* AroundMeUITests */,
 				37F3A3B31C25589300E03C36 /* Products */,
+				1B5329CCAC2B65778E6E0A04 /* Pods */,
+				C09050BC0831F8CF950AC6B7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +159,16 @@
 		37F3A3B41C25589300E03C36 /* AroundMe */ = {
 			isa = PBXGroup;
 			children = (
-				37F3A3B51C25589300E03C36 /* AppDelegate.swift */,
-				37F3A3B71C25589300E03C36 /* ViewController.swift */,
+				37F26B441C26E61D00E3093F /* Services */,
+				37F26B431C26E59B00E3093F /* Views */,
+				37F26B421C26E59400E3093F /* Models */,
+				37F26B3F1C26DC0700E3093F /* Controllers */,
 				37F3A3B91C25589300E03C36 /* Main.storyboard */,
 				37F3A3BC1C25589300E03C36 /* Assets.xcassets */,
+				37F3A3B51C25589300E03C36 /* AppDelegate.swift */,
 				37F3A3BE1C25589300E03C36 /* LaunchScreen.storyboard */,
 				37F3A3C11C25589300E03C36 /* Info.plist */,
+				37A0001A1C273E1A00815FA2 /* Properties.plist */,
 			);
 			path = AroundMe;
 			sourceTree = "<group>";
@@ -125,6 +191,14 @@
 			path = AroundMeUITests;
 			sourceTree = "<group>";
 		};
+		C09050BC0831F8CF950AC6B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22F1D0E2A52062FB5A269763 /* Pods_AroundMe.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +206,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 37F3A3DA1C25589300E03C36 /* Build configuration list for PBXNativeTarget "AroundMe" */;
 			buildPhases = (
+				9D8CA2E27B5FF1DF80615960 /* Check Pods Manifest.lock */,
 				37F3A3AE1C25589300E03C36 /* Sources */,
 				37F3A3AF1C25589300E03C36 /* Frameworks */,
 				37F3A3B01C25589300E03C36 /* Resources */,
+				72D6249890DDCA9C38B882C1 /* Embed Pods Frameworks */,
+				892AD70C044F27FB7AB7A45A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -231,6 +308,7 @@
 				37F3A3C01C25589300E03C36 /* LaunchScreen.storyboard in Resources */,
 				37F3A3BD1C25589300E03C36 /* Assets.xcassets in Resources */,
 				37F3A3BB1C25589300E03C36 /* Main.storyboard in Resources */,
+				37A0001B1C273E1A00815FA2 /* Properties.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,13 +328,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		72D6249890DDCA9C38B882C1 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AroundMe/Pods-AroundMe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		892AD70C044F27FB7AB7A45A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AroundMe/Pods-AroundMe-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D8CA2E27B5FF1DF80615960 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		37F3A3AE1C25589300E03C36 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37F3A3B81C25589300E03C36 /* ViewController.swift in Sources */,
+				37F26B3E1C26DBE000E3093F /* AroundMeTableViewController.swift in Sources */,
 				37F3A3B61C25589300E03C36 /* AppDelegate.swift in Sources */,
+				37F26B461C26E6B000E3093F /* Location.swift in Sources */,
+				37F26B4A1C272E6200E3093F /* OAuthService.swift in Sources */,
+				37F26B481C26E6B900E3093F /* Business.swift in Sources */,
+				37F26B411C26DF0600E3093F /* AroundMeTableViewCell.swift in Sources */,
+				370303191C282A990061D2DB /* ParseService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,9 +527,11 @@
 		};
 		37F3A3DB1C25589300E03C36 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBD01CB28693DA2A539A3A26 /* Pods-AroundMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AroundMe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = student.hogent.318937ns.AroundMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -407,9 +540,11 @@
 		};
 		37F3A3DC1C25589300E03C36 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FF96ACD638A64664653B0C3 /* Pods-AroundMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AroundMe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = student.hogent.318937ns.AroundMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -483,6 +618,7 @@
 				37F3A3DC1C25589300E03C36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		37F3A3DD1C25589300E03C36 /* Build configuration list for PBXNativeTarget "AroundMeTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +627,7 @@
 				37F3A3DF1C25589300E03C36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		37F3A3E01C25589300E03C36 /* Build configuration list for PBXNativeTarget "AroundMeUITests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +636,7 @@
 				37F3A3E21C25589300E03C36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
