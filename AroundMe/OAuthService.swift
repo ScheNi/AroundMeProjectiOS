@@ -18,6 +18,7 @@ class OAuthService {
     let oauthClient: OAuthSwiftClient?
     
     init() {
+        //Source: splitview exercise course iOS
         let path = NSBundle.mainBundle().pathForResource("Properties", ofType: "plist")!
         properties = NSDictionary(contentsOfFile: path)!
         
@@ -30,11 +31,13 @@ class OAuthService {
         oauthClient = OAuthSwiftClient(consumerKey: consumerKey, consumerSecret: consumerSecret, accessToken: token, accessTokenSecret: tokenSecret)
     }
     
+    func searchAroundMe(term: String, success: (data:NSData, response: NSHTTPURLResponse) -> (), failure: (failure: NSError) -> ()) {
+        doRequest(["term":term, "location":"Marcel+Bovynstraat+8", "sort":"2", "offset": "0"], success: success, failure: failure)
+    }
+    
     //Source: callback inspiration from http://stackoverflow.com/a/27393174/2523667 and use of https://github.com/OAuthSwift/OAuthSwift
-    func doRequest(success: (data:NSData, response: NSHTTPURLResponse) -> (), failure: (failure: NSError) -> ()) {
-        let searchparam = ["term":"food", "location":"Marcel+Bovynstraat+8", "sort":"1"]
-
-        oauthClient!.get("https://api.yelp.com/v2/search", parameters: searchparam, headers: nil, success: success, failure: failure)
+    func doRequest(params: [String:String], success: (data:NSData, response: NSHTTPURLResponse) -> (), failure: (failure: NSError) -> ()) {
+        oauthClient!.get("https://api.yelp.com/v2/search", parameters: params, headers: nil, success: success, failure: failure)
 
     }
     

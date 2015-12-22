@@ -21,6 +21,7 @@ class ParseService {
             let ratingImg = value["rating_img_url"].string
             //distance is only returned when sending request with a specific address
             let distance = value["distance"].double
+            let numberOfReviews = value["review_count"].int
             
             let location = value["location"]
             let address = location["address"][0].string
@@ -37,8 +38,8 @@ class ParseService {
                 businessLocation = nil
             }
             
-            if name != nil && ratingImg != nil && businessLocation != nil {
-                businesses.append(Business(name: name!, image: image, rating: ratingImg!, location: businessLocation!, distance: distance))
+            if name != nil && ratingImg != nil && businessLocation != nil && numberOfReviews != nil {
+                businesses.append(Business(name: name!, image: image, rating: ratingImg!, location: businessLocation!, distance: distance, numberOfReviews: numberOfReviews!))
             }
         }
         return  businesses

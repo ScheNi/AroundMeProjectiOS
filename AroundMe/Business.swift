@@ -14,6 +14,7 @@ class Business {
     let ratingImage: NSURL
     let location: Location
     let distance: Double?
+    let numberOfReviews: Int
     
     var businessLocation: String {
         get {
@@ -30,7 +31,13 @@ class Business {
         }
     }
     
-    init(name: String, image: String?, rating: String, location: Location, distance: Double?) {
+    var businessNumberOfReviews: String {
+        get {
+            return "\(self.numberOfReviews) reviews"
+        }
+    }
+    
+    init(name: String, image: String?, rating: String, location: Location, distance: Double?, numberOfReviews: Int) {
         self.name = name
         if image != nil {
             self.imageUrl = NSURL(string: image!)!
@@ -40,6 +47,7 @@ class Business {
         self.ratingImage = NSURL(string: rating)!
         self.location = location
         self.distance = distance
+        self.numberOfReviews = numberOfReviews
     }
     
 }
