@@ -15,7 +15,7 @@ class ParseService {
         var businesses: [Business] = []
         
         for (_, value):(String, JSON) in json["businesses"] {
-            //Do something you want
+            
             let name = value["name"].string
             let image = value["image_url"].string
             let ratingImg = value["rating_img_url"].string
@@ -30,6 +30,7 @@ class ParseService {
             let coordinate = location["coordinate"]
             let longitude = coordinate["longitude"].double
             let latitude = coordinate["latitude"].double
+            
             
             let businessLocation:Location?
             if address != nil && city != nil && postalCode != nil && longitude != nil && latitude != nil {

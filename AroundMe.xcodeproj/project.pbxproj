@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		370303191C282A990061D2DB /* ParseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370303181C282A990061D2DB /* ParseService.swift */; settings = {ASSET_TAGS = (); }; };
 		37A0001B1C273E1A00815FA2 /* Properties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37A0001A1C273E1A00815FA2 /* Properties.plist */; settings = {ASSET_TAGS = (); }; };
+		37A1B9F11C306F1F006D55F3 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A1B9F01C306F1F006D55F3 /* Filters.swift */; settings = {ASSET_TAGS = (); }; };
 		37BA369A1C28A17000190E5F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37BA36991C28A17000190E5F /* CoreLocation.framework */; };
 		37BA369C1C28B00000190E5F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37BA369B1C28B00000190E5F /* MapKit.framework */; };
 		37CD85FB1C28BCAB00836927 /* AroundMeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CD85FA1C28BCAB00836927 /* AroundMeDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -49,6 +50,7 @@
 		22F1D0E2A52062FB5A269763 /* Pods_AroundMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AroundMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		370303181C282A990061D2DB /* ParseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseService.swift; sourceTree = "<group>"; };
 		37A0001A1C273E1A00815FA2 /* Properties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Properties.plist; sourceTree = "<group>"; };
+		37A1B9F01C306F1F006D55F3 /* Filters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
 		37BA36991C28A17000190E5F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		37BA369B1C28B00000190E5F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		37CD85FA1C28BCAB00836927 /* AroundMeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AroundMeDetailViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			children = (
 				37F26B451C26E6B000E3093F /* Location.swift */,
 				37F26B471C26E6B900E3093F /* Business.swift */,
+				37A1B9F01C306F1F006D55F3 /* Filters.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				37F3A3B61C25589300E03C36 /* AppDelegate.swift in Sources */,
 				37CD85FB1C28BCAB00836927 /* AroundMeDetailViewController.swift in Sources */,
 				37F26B461C26E6B000E3093F /* Location.swift in Sources */,
+				37A1B9F11C306F1F006D55F3 /* Filters.swift in Sources */,
 				37F26B4A1C272E6200E3093F /* OAuthService.swift in Sources */,
 				37F26B481C26E6B900E3093F /* Business.swift in Sources */,
 				37CD85FF1C294D6E00836927 /* AroundMeSearchController.swift in Sources */,

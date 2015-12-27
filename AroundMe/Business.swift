@@ -15,6 +15,7 @@ class Business {
     let location: Location
     let distance: Double?
     let numberOfReviews: Int
+
     
     var businessLocation: String {
         get {

@@ -31,8 +31,8 @@ class OAuthService {
         oauthClient = OAuthSwiftClient(consumerKey: consumerKey, consumerSecret: consumerSecret, accessToken: token, accessTokenSecret: tokenSecret)
     }
     
-    func searchAroundMe(term: String, success: (data:NSData, response: NSHTTPURLResponse) -> (), failure: (failure: NSError) -> ()) {
-        doRequest(["term":term, "location":"Marcel+Bovynstraat+8", "sort":"2", "offset": "0"], success: success, failure: failure)
+    func searchAroundMe(term: String, sort: Int, success: (data:NSData, response: NSHTTPURLResponse) -> (), failure: (failure: NSError) -> ()) {
+        doRequest(["term":term, "location":"Marcel+Bovynstraat+8", "sort":String(sort), "offset": "0"], success: success, failure: failure)
     }
     
     //Source: callback inspiration from http://stackoverflow.com/a/27393174/2523667 and use of https://github.com/OAuthSwift/OAuthSwift
