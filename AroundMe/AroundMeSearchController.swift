@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import SwiftSpinner
 // picker view: https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/UIKitUICatalog/UIPickerView.html and https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPickerView_Class/
-class AroundMeSearchController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, CLLocationManagerDelegate {
+class AroundMeSearchController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, CLLocationManagerDelegate, UISplitViewControllerDelegate {
 
     @IBOutlet weak var searchTextField: UITextField!
     
@@ -18,15 +18,31 @@ class AroundMeSearchController: UIViewController, UIPickerViewDataSource, UIPick
     
     
     var locationManager: CLLocationManager!
-    var placeMark: CLPlacemark!
+    var placeMark: CLPlacemark! = nil {
+        didSet {
+            SwiftSpinner.hide()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        splitViewController!.delegate = self
         self.sortPickerView.dataSource = self;
         self.sortPickerView.delegate = self;
         
+        //Source location: https://itunesu.itunes.apple.com/WebObjects/LZDirectory.woa/ra/directory/courses/961180099/feed and http://rshankar.com/get-your-current-address-in-swift/
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
         
     }
+    
+    func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController: UIViewController, ontoPrimaryViewController primaryViewController: UIViewController) -> Bool {
+        return true
+    }
+    
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = manager.location {
@@ -39,7 +55,6 @@ class AroundMeSearchController: UIViewController, UIPickerViewDataSource, UIPick
                 if placemarks!.count > 0 {
                     let pm = placemarks![0] as CLPlacemark
                     self.placeMark = pm
-                    SwiftSpinner.hide()
                 } else {
                     print("Problem with the data received from geocoder")
                 }
@@ -67,7 +82,7 @@ class AroundMeSearchController: UIViewController, UIPickerViewDataSource, UIPick
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if let vc = segue.destinationViewController as? AroundMeTableViewController {
+        if let vc = (segue.destinationViewController as! UINavigationController).topViewController as? AroundMeTableViewController {
             //Source trim: http://stackoverflow.com/a/26797958/2523667
             let searchString: String
             
@@ -89,12 +104,9 @@ class AroundMeSearchController: UIViewController, UIPickerViewDataSource, UIPick
     }
     
     override func viewWillAppear(animated: Bool) {
-        //Source location: https://itunesu.itunes.apple.com/WebObjects/LZDirectory.woa/ra/directory/courses/961180099/feed and http://rshankar.com/get-your-current-address-in-swift/
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestAlwaysAuthorization()
+        if placeMark == nil {
+            SwiftSpinner.show("Getting your location")
+        }
         locationManager.startUpdatingLocation()
-        SwiftSpinner.show("Getting your location")
     }
 }

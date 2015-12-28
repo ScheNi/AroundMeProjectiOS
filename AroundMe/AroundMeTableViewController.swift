@@ -23,6 +23,7 @@ class AroundMeTableViewController: UITableViewController {
             tableView.reloadData()
         }
     }
+    var region: Region!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +54,7 @@ class AroundMeTableViewController: UITableViewController {
                 success: { (data, response) -> Void in
                     print(response)
                     self.businesses += ParseService.parseBusiness(data)
+                    self.region = ParseService.parseRegion(data)
                     if (params.loadedFirstTime == true) { SwiftSpinner.hide() }
                 })
                 { (error) -> Void in
@@ -66,9 +68,18 @@ class AroundMeTableViewController: UITableViewController {
             if let vc = segue.destinationViewController as? AroundMeDetailViewController {
                 vc.business = tableCell.business
             }
+        } else if let vc = (segue.destinationViewController as! UINavigationController).topViewController as? AroundMeMapViewController {
+            vc.businesses = self.businesses
+            vc.region = region
         }
     }
 
+    override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
+        if !splitViewController!.collapsed {
+            navigationItem.leftBarButtonItem = splitViewController!.displayModeButtonItem()
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

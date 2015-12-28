@@ -45,4 +45,22 @@ class ParseService {
         }
         return  businesses
     }
+    
+    static func parseRegion(data: NSData) -> Region {
+        let json = JSON(data: data)
+        
+        let span = json["region"]["span"]
+        let latitudeDelta = span["latitude_delta"].double
+        let longitudeDelta = span["longitude_delta"].double
+        
+        let center = json["region"]["center"]
+        let centerLatitude = center["latitude"].double
+        let centerLongitude = center["longitude"].double
+        
+        var region:Region!
+        if latitudeDelta != nil && longitudeDelta != nil && centerLatitude != nil && centerLongitude != nil {
+            region = Region(latitudeDelta: latitudeDelta!, longitudeDelta: longitudeDelta!, centerLatitude: centerLatitude!, centerLongitude: centerLongitude!)
+        }
+        return region
+    }
 }
