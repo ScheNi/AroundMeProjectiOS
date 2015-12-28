@@ -3,12 +3,14 @@ PODS:
   - OAuthSwift (0.4.8)
   - SwiftSpinner (0.8.0)
   - SwiftyJSON (2.3.2)
+  - UIScrollView-InfiniteScroll (0.7.3)
 
 DEPENDENCIES:
   - Kingfisher (~> 1.8)
   - OAuthSwift (~> 0.4.8)
   - SwiftSpinner
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
+  - UIScrollView-InfiniteScroll
 
 EXTERNAL SOURCES:
   SwiftyJSON:
@@ -24,5 +26,6 @@ SPEC CHECKSUMS:
   OAuthSwift: 23bd4807a4fd9e54ef6e7c2b5875138819186d9a
   SwiftSpinner: 11c2c5ec7443d92f3026d3067ca8a91d4adef13f
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  UIScrollView-InfiniteScroll: b6c7d6d155dca7f9c5dd43813ecffeb301b3d50c
 
 COCOAPODS: 0.39.0

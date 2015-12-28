@@ -10,4 +10,5 @@ import Foundation
 
 struct Filters {
     static let sortFilters: [String] = ["Best matched", "Distance", "Highest rating"]
+    static let defaultSearchString = "Restaurants"
 }

@@ -8,11 +8,15 @@
 
 import UIKit
 import CoreLocation
+import UIScrollView_InfiniteScroll
+import SwiftSpinner
 
-class AroundMeTableViewController: UITableViewController, CLLocationManagerDelegate {
+
+class AroundMeTableViewController: UITableViewController {
     
     let service=OAuthService()
-    let locationManager = CLLocationManager()
+    
+    var searchParameters:SearchParameters?
     
     var businesses = [Business]() {
         didSet {
@@ -24,17 +28,38 @@ class AroundMeTableViewController: UITableViewController, CLLocationManagerDeleg
         super.viewDidLoad()
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
-
         
-        //Source location: https://itunesu.itunes.apple.com/WebObjects/LZDirectory.woa/ra/directory/courses/961180099/feed
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-
-
+        tableView.infiniteScrollIndicatorStyle = .Gray
+        
+        tableView.addInfiniteScrollWithHandler { (scrollView) -> Void in
+            let tableView = scrollView as! UITableView
+            
+            if self.searchParameters != nil {
+                self.searchParameters?.increaseOffset()
+                self.loadData()
+            }
+            
+            
+            tableView.finishInfiniteScroll()
+        }
+        
+        
     }
-
+    
+    func loadData() {
+        if let params = searchParameters {
+            if (params.loadedFirstTime == true) { SwiftSpinner.show(searchParameters!.searchTerm) }
+            self.service.searchAroundMe(params,
+                success: { (data, response) -> Void in
+                    print(response)
+                    self.businesses += ParseService.parseBusiness(data)
+                    if (params.loadedFirstTime == true) { SwiftSpinner.hide() }
+                })
+                { (error) -> Void in
+                    print(error)
+                }
+        }
+    }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let tableCell = sender as? AroundMeTableViewCell {

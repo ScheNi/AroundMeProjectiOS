@@ -52,7 +52,7 @@ class AroundMeDetailViewController: UIViewController, MKMapViewDelegate {
             dropPin.title = business!.name
             mapView.addAnnotation(dropPin)
             //Source center:http://stackoverflow.com/a/28289351/2523667
-            let span = MKCoordinateSpanMake(0.075, 0.075)
+            let span = MKCoordinateSpanMake(0.010, 0.010)
             let region = MKCoordinateRegion(center: pin, span: span)
             mapView.setRegion(region, animated: true)
 

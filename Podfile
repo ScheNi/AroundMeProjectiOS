@@ -8,6 +8,7 @@ target 'AroundMe' do
     pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
     pod 'Kingfisher', '~> 1.8'
     pod "SwiftSpinner"
+    pod 'UIScrollView-InfiniteScroll'
 end
 
 target 'AroundMeTests' do

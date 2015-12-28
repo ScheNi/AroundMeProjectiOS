@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		370303191C282A990061D2DB /* ParseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370303181C282A990061D2DB /* ParseService.swift */; settings = {ASSET_TAGS = (); }; };
+		3779EBF81C3187C7003A46CB /* SearchParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3779EBF71C3187C7003A46CB /* SearchParameters.swift */; settings = {ASSET_TAGS = (); }; };
 		37A0001B1C273E1A00815FA2 /* Properties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37A0001A1C273E1A00815FA2 /* Properties.plist */; settings = {ASSET_TAGS = (); }; };
 		37A1B9F11C306F1F006D55F3 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A1B9F01C306F1F006D55F3 /* Filters.swift */; settings = {ASSET_TAGS = (); }; };
 		37BA369A1C28A17000190E5F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37BA36991C28A17000190E5F /* CoreLocation.framework */; };
@@ -49,6 +50,8 @@
 /* Begin PBXFileReference section */
 		22F1D0E2A52062FB5A269763 /* Pods_AroundMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AroundMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		370303181C282A990061D2DB /* ParseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseService.swift; sourceTree = "<group>"; };
+		3779EBF61C3126E4003A46CB /* people_walking.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = people_walking.mp4; path = ../people_walking.mp4; sourceTree = "<group>"; };
+		3779EBF71C3187C7003A46CB /* SearchParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchParameters.swift; sourceTree = "<group>"; };
 		37A0001A1C273E1A00815FA2 /* Properties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Properties.plist; sourceTree = "<group>"; };
 		37A1B9F01C306F1F006D55F3 /* Filters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
 		37BA36991C28A17000190E5F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -131,6 +134,7 @@
 				37F26B451C26E6B000E3093F /* Location.swift */,
 				37F26B471C26E6B900E3093F /* Business.swift */,
 				37A1B9F01C306F1F006D55F3 /* Filters.swift */,
+				3779EBF71C3187C7003A46CB /* SearchParameters.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -185,6 +189,7 @@
 				37F3A3BC1C25589300E03C36 /* Assets.xcassets */,
 				37F3A3B51C25589300E03C36 /* AppDelegate.swift */,
 				37F3A3BE1C25589300E03C36 /* LaunchScreen.storyboard */,
+				3779EBF61C3126E4003A46CB /* people_walking.mp4 */,
 				37F3A3C11C25589300E03C36 /* Info.plist */,
 				37A0001A1C273E1A00815FA2 /* Properties.plist */,
 			);
@@ -404,6 +409,7 @@
 				37F26B3E1C26DBE000E3093F /* AroundMeTableViewController.swift in Sources */,
 				37F3A3B61C25589300E03C36 /* AppDelegate.swift in Sources */,
 				37CD85FB1C28BCAB00836927 /* AroundMeDetailViewController.swift in Sources */,
+				3779EBF81C3187C7003A46CB /* SearchParameters.swift in Sources */,
 				37F26B461C26E6B000E3093F /* Location.swift in Sources */,
 				37A1B9F11C306F1F006D55F3 /* Filters.swift in Sources */,
 				37F26B4A1C272E6200E3093F /* OAuthService.swift in Sources */,
