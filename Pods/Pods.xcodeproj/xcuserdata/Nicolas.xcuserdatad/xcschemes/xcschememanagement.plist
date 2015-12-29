@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ReachabilitySwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftSpinner.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,27 +42,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>16384122A61DED8444A0B49323D16359</key>
+		<key>32118F90DCC69DEA0FDEAB732AB636D6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1DF5CE254412C32E80BC9BB552B1F95D</key>
+		<key>8E82B191EEB1A3353284F5828DC3E3E2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4870C9D39FED1060C9D495714BBBA9FC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>73488913E4F7E5DE0511686550BF3E02</key>
+		<key>9D94E953AAFFE4D86CDE8B70CC35A8C0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>DE93970FB68874F2C2C5274B42422D36</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E68B8F8628461CF46F07B5E3E032F459</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EB202125CDEDE34D50876E52E68DD6CD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

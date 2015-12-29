@@ -13,6 +13,8 @@ class AroundMeMapViewController: UIViewController, MKMapViewDelegate {
 
     var businesses: [Business]!
     var region: Region!
+    var annotations: [MKPointAnnotation]! = []
+    var currenBusiness: Int!
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -22,7 +24,9 @@ class AroundMeMapViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidAppear(animated: Bool) {
         mapView.delegate = self
-        loadPins()
+        if self.annotations.count != businesses.count {
+            loadPins()
+        }
     }
     
     func loadPins() {
@@ -34,14 +38,46 @@ class AroundMeMapViewController: UIViewController, MKMapViewDelegate {
             dropPin.coordinate = pin
             dropPin.title = business.name
             dropPin.subtitle = business.location.address
-            mapView.addAnnotation(dropPin)
+            annotations.append(dropPin)
         }
+        mapView.addAnnotations(annotations)
         let center = CLLocationCoordinate2DMake(self.region.centerLatitude, self.region.centerLongitude)
         //Source center:http://stackoverflow.com/a/28289351/2523667
         let span = MKCoordinateSpanMake(self.region.latitudeDelta, self.region.longitudeDelta)
         let region = MKCoordinateRegion(center: center, span: span)
         mapView.setRegion(region, animated: true)
+        mapView.showsUserLocation = true
 
     }
     
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        // Source: find index by object http://stackoverflow.com/a/24012417/2523667
+        currenBusiness = (self.annotations as NSArray).indexOfObject(view.annotation!)
+        if currenBusiness >= 0 {
+            performSegueWithIdentifier("ShowDetails", sender: self)
+        }
+    }
+    
+    //Source adding button http://stackoverflow.com/a/33124302/2523667
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        var view = mapView.dequeueReusableAnnotationViewWithIdentifier("pin") as? MKPinAnnotationView
+        
+        if view == nil {
+            view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
+            view!.canShowCallout = true
+        } else {
+            view!.annotation = annotation
+        }
+        
+        view!.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure) as UIView
+        
+        return view
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let vc = segue.destinationViewController as? AroundMeDetailViewController {
+            vc.business = businesses[currenBusiness]
+        }
+    }
 }

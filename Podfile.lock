@@ -1,6 +1,7 @@
 PODS:
   - Kingfisher (1.8.5)
   - OAuthSwift (0.4.8)
+  - ReachabilitySwift (2.3.3)
   - SwiftSpinner (0.8.0)
   - SwiftyJSON (2.3.2)
   - UIScrollView-InfiniteScroll (0.7.3)
@@ -8,15 +9,21 @@ PODS:
 DEPENDENCIES:
   - Kingfisher (~> 1.8)
   - OAuthSwift (~> 0.4.8)
+  - ReachabilitySwift (from `https://github.com/ashleymills/Reachability.swift`)
   - SwiftSpinner
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
   - UIScrollView-InfiniteScroll
 
 EXTERNAL SOURCES:
+  ReachabilitySwift:
+    :git: https://github.com/ashleymills/Reachability.swift
   SwiftyJSON:
     :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 CHECKOUT OPTIONS:
+  ReachabilitySwift:
+    :commit: 217ba79579efbfebd66691666b782ecd04fe5f5b
+    :git: https://github.com/ashleymills/Reachability.swift
   SwiftyJSON:
     :commit: 8e618c8baf6323a5079c6549bb38d48357b31630
     :git: https://github.com/SwiftyJSON/SwiftyJSON.git
@@ -24,6 +31,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Kingfisher: 780fed0fa82692a3bd59d53329ae2b85cdd354a5
   OAuthSwift: 23bd4807a4fd9e54ef6e7c2b5875138819186d9a
+  ReachabilitySwift: e0f6b6f280effb47731acfaaa2d5ffe223703793
   SwiftSpinner: 11c2c5ec7443d92f3026d3067ca8a91d4adef13f
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   UIScrollView-InfiniteScroll: b6c7d6d155dca7f9c5dd43813ecffeb301b3d50c

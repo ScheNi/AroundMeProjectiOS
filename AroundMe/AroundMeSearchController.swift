@@ -18,6 +18,7 @@ class AroundMeSearchController: UIViewController, UIPickerViewDataSource, UIPick
     
     
     var locationManager: CLLocationManager!
+    
     var placeMark: CLPlacemark! = nil {
         didSet {
             SwiftSpinner.hide()
@@ -62,11 +63,6 @@ class AroundMeSearchController: UIViewController, UIPickerViewDataSource, UIPick
 
         }
     }
-    
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-        print("Failed to find user's location: \(error.localizedDescription)")
-    }
-    
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1

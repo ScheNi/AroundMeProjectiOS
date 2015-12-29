@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		370303191C282A990061D2DB /* ParseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370303181C282A990061D2DB /* ParseService.swift */; settings = {ASSET_TAGS = (); }; };
 		3779EBF81C3187C7003A46CB /* SearchParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3779EBF71C3187C7003A46CB /* SearchParameters.swift */; settings = {ASSET_TAGS = (); }; };
+		378B86BF1C3298D10045DB8A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378B86BE1C3298D10045DB8A /* SystemConfiguration.framework */; };
 		37A0001B1C273E1A00815FA2 /* Properties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37A0001A1C273E1A00815FA2 /* Properties.plist */; settings = {ASSET_TAGS = (); }; };
 		37A1B9F11C306F1F006D55F3 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A1B9F01C306F1F006D55F3 /* Filters.swift */; settings = {ASSET_TAGS = (); }; };
 		37BA369A1C28A17000190E5F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37BA36991C28A17000190E5F /* CoreLocation.framework */; };
@@ -52,8 +53,8 @@
 /* Begin PBXFileReference section */
 		22F1D0E2A52062FB5A269763 /* Pods_AroundMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AroundMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		370303181C282A990061D2DB /* ParseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseService.swift; sourceTree = "<group>"; };
-		3779EBF61C3126E4003A46CB /* people_walking.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = people_walking.mp4; path = ../people_walking.mp4; sourceTree = "<group>"; };
 		3779EBF71C3187C7003A46CB /* SearchParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchParameters.swift; sourceTree = "<group>"; };
+		378B86BE1C3298D10045DB8A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		37A0001A1C273E1A00815FA2 /* Properties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Properties.plist; sourceTree = "<group>"; };
 		37A1B9F01C306F1F006D55F3 /* Filters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
 		37BA36991C28A17000190E5F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -89,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				378B86BF1C3298D10045DB8A /* SystemConfiguration.framework in Frameworks */,
 				37BA369C1C28B00000190E5F /* MapKit.framework in Frameworks */,
 				37BA369A1C28A17000190E5F /* CoreLocation.framework in Frameworks */,
 				C4A8B65A1D5652EB886718B7 /* Pods_AroundMe.framework in Frameworks */,
@@ -195,7 +197,6 @@
 				37F3A3BC1C25589300E03C36 /* Assets.xcassets */,
 				37F3A3B51C25589300E03C36 /* AppDelegate.swift */,
 				37F3A3BE1C25589300E03C36 /* LaunchScreen.storyboard */,
-				3779EBF61C3126E4003A46CB /* people_walking.mp4 */,
 				37F3A3C11C25589300E03C36 /* Info.plist */,
 				37A0001A1C273E1A00815FA2 /* Properties.plist */,
 			);
@@ -223,6 +224,7 @@
 		C09050BC0831F8CF950AC6B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				378B86BE1C3298D10045DB8A /* SystemConfiguration.framework */,
 				37BA369B1C28B00000190E5F /* MapKit.framework */,
 				37BA36991C28A17000190E5F /* CoreLocation.framework */,
 				22F1D0E2A52062FB5A269763 /* Pods_AroundMe.framework */,
@@ -295,6 +297,7 @@
 		37F3A3AA1C25589300E03C36 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Nicolas Schelkens";
 				TargetAttributes = {
@@ -568,11 +571,13 @@
 			baseConfigurationReference = EBD01CB28693DA2A539A3A26 /* Pods-AroundMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = AroundMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = student.hogent.318937ns.AroundMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -581,6 +586,7 @@
 			baseConfigurationReference = 7FF96ACD638A64664653B0C3 /* Pods-AroundMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = AroundMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -16,6 +16,7 @@ class AroundMeTableViewController: UITableViewController {
     
     let service=OAuthService()
     
+    
     var searchParameters:SearchParameters?
     
     var businesses = [Business]() {
@@ -24,6 +25,7 @@ class AroundMeTableViewController: UITableViewController {
         }
     }
     var region: Region!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +73,7 @@ class AroundMeTableViewController: UITableViewController {
         } else if let vc = (segue.destinationViewController as! UINavigationController).topViewController as? AroundMeMapViewController {
             vc.businesses = self.businesses
             vc.region = region
+            vc.title = self.title
         }
     }
 

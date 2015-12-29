@@ -9,12 +9,20 @@
 import UIKit
 
 class EmptySearchResultController: UIViewController {
+    @IBOutlet weak var message: UILabel!
+    
+    var errorMessage: String?
+    
     override func viewDidLoad() {
-        navigationItem.leftBarButtonItem = splitViewController!.displayModeButtonItem()
+        if errorMessage == nil {
+            navigationItem.leftBarButtonItem = splitViewController!.displayModeButtonItem()
+        } else {
+            message.text = errorMessage!
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
-        if splitViewController!.displayMode == .PrimaryHidden {
+        if splitViewController!.displayMode == .PrimaryHidden && errorMessage == nil {
             let target = splitViewController!.displayModeButtonItem().target
             let action = splitViewController!.displayModeButtonItem().action
             target!.performSelector(action)

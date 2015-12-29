@@ -171,7 +171,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zfT-1F-Zog">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zfT-1F-Zog">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <animations/>
                             </mapView>
@@ -194,11 +194,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="zfT-1F-Zog" id="sWr-Cp-awA"/>
+                        <segue destination="xQ0-T5-3Y5" kind="show" identifier="ShowDetails" id="NZg-j5-DJ6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NME-wW-kCm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2715" y="-29"/>
+            <point key="canvasLocation" x="2075" y="887"/>
         </scene>
         <!--Around Me Detail View Controller-->
         <scene sceneID="mPx-jj-0Td">
@@ -312,7 +313,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFF-5I-Beq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1817" y="590"/>
+            <point key="canvasLocation" x="1457" y="2246"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="pbi-PJ-74z">
@@ -349,7 +350,6 @@
         <!--Empty Search Result Controller-->
         <scene sceneID="NsZ-ef-vQ0">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rUc-qr-RMu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="nvK-oB-BXf" customClass="EmptySearchResultController" customModule="AroundMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vwu-KF-iwZ"/>
@@ -359,8 +359,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Search for something please" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYy-hz-cKv">
-                                <rect key="frame" x="102" y="289" width="219" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Search for a business!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYy-hz-cKv">
+                                <rect key="frame" x="151" y="289" width="170" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -375,7 +375,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7Vk-cG-R9v"/>
+                    <connections>
+                        <outlet property="message" destination="jYy-hz-cKv" id="1b6-2u-1rK"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rUc-qr-RMu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-901" y="1053"/>
         </scene>
@@ -445,10 +449,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4yt-sW-yCB">
-                                <rect key="frame" x="20" y="156" width="560" height="150"/>
+                                <rect key="frame" x="20" y="156" width="560" height="90"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="ycf-jz-Buu"/>
+                                    <constraint firstAttribute="height" constant="90" id="e96-ty-7cl"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="wuc-Eb-7WT" id="Ryh-Y4-csC"/>
@@ -472,7 +476,6 @@
                             <constraint firstItem="IpY-uD-Wqs" firstAttribute="top" secondItem="7iT-S8-OC0" secondAttribute="top" id="fWA-91-Wd4"/>
                             <constraint firstItem="4yt-sW-yCB" firstAttribute="leading" secondItem="wuc-Eb-7WT" secondAttribute="leadingMargin" id="gEY-EB-Old"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4yt-sW-yCB" secondAttribute="trailing" id="xLo-t1-haU"/>
-                            <constraint firstItem="cCU-dR-rMb" firstAttribute="top" relation="lessThanOrEqual" secondItem="4yt-sW-yCB" secondAttribute="bottom" constant="294" id="zLc-jn-fYZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="AroundMe" id="U7t-Ec-WK6"/>
@@ -508,10 +511,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0cN-Nd-Y38" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1811" y="-73"/>
+            <point key="canvasLocation" x="1217" y="1015"/>
         </scene>
     </scenes>
     <resources>
         <image name="12388190_10153775262794509_1216905574_n" width="16" height="16"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Psp-RW-A2u"/>
+    </inferredMetricsTieBreakers>
 </document>

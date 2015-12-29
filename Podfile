@@ -9,6 +9,7 @@ target 'AroundMe' do
     pod 'Kingfisher', '~> 1.8'
     pod "SwiftSpinner"
     pod 'UIScrollView-InfiniteScroll'
+    pod 'ReachabilitySwift', git: 'https://github.com/ashleymills/Reachability.swift'
 end
 
 target 'AroundMeTests' do

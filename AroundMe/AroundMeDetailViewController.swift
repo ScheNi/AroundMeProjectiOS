@@ -37,7 +37,7 @@ class AroundMeDetailViewController: UIViewController, MKMapViewDelegate {
             if business!.imageUrl != nil {
                 aroundMeImage.kf_setImageWithURL(business!.imageUrl!)
             } else {
-                aroundMeImage.image = UIImage(named: "resto")
+                aroundMeImage.image = UIImage(named: "business")
             }
             aroundMeImage.layer.cornerRadius = CGFloat(3.0)
             aroundMeRating.kf_setImageWithURL(business!.ratingImage)

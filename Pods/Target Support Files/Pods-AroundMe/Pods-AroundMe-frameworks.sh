@@ -86,6 +86,7 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-AroundMe/Kingfisher.framework"
   install_framework "Pods-AroundMe/OAuthSwift.framework"
+  install_framework "Pods-AroundMe/ReachabilitySwift.framework"
   install_framework "Pods-AroundMe/SwiftSpinner.framework"
   install_framework "Pods-AroundMe/SwiftyJSON.framework"
   install_framework "Pods-AroundMe/UIScrollView_InfiniteScroll.framework"
@@ -93,6 +94,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-AroundMe/Kingfisher.framework"
   install_framework "Pods-AroundMe/OAuthSwift.framework"
+  install_framework "Pods-AroundMe/ReachabilitySwift.framework"
   install_framework "Pods-AroundMe/SwiftSpinner.framework"
   install_framework "Pods-AroundMe/SwiftyJSON.framework"
   install_framework "Pods-AroundMe/UIScrollView_InfiniteScroll.framework"
