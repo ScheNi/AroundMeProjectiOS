@@ -242,7 +242,7 @@
                                     <constraint firstAttribute="height" constant="18" id="G9m-py-3Na"/>
                                 </constraints>
                             </imageView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="190" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Dmf-13-Jod">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="190" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dmf-13-Jod">
                                 <rect key="frame" x="8" y="160" width="584" height="431.5"/>
                                 <animations/>
                             </mapView>

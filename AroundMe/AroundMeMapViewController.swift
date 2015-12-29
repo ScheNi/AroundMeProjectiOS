@@ -46,7 +46,6 @@ class AroundMeMapViewController: UIViewController, MKMapViewDelegate {
         let span = MKCoordinateSpanMake(self.region.latitudeDelta, self.region.longitudeDelta)
         let region = MKCoordinateRegion(center: center, span: span)
         mapView.setRegion(region, animated: true)
-        mapView.showsUserLocation = true
 
     }
     
@@ -60,6 +59,10 @@ class AroundMeMapViewController: UIViewController, MKMapViewDelegate {
     
     //Source adding button http://stackoverflow.com/a/33124302/2523667
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        //if is a userlocation, do not alter
+        if (annotation.isKindOfClass(MKUserLocation)) {
+            return nil;
+        }
         
         var view = mapView.dequeueReusableAnnotationViewWithIdentifier("pin") as? MKPinAnnotationView
         

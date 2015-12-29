@@ -90,9 +90,20 @@ class AroundMeSearchController: UIViewController, UIPickerViewDataSource, UIPick
             }
             vc.title = searchString
             let row = sortPickerView.selectedRowInComponent(0)
-            let street = self.placeMark.name!.stringByReplacingOccurrencesOfString(" ", withString: "+")
-            let location = "\(street)+\(self.placeMark.postalCode!)+\(self.placeMark.locality!),+\(self.placeMark.country!)"
-            vc.searchParameters = SearchParameters(searchTerm: searchString, location: location, sortedBy: row)
+            let street = self.placeMark.name?.stringByReplacingOccurrencesOfString(" ", withString: "+")
+            let country = self.placeMark.country?.stringByReplacingOccurrencesOfString(" ", withString: "+")
+            let locality = self.placeMark.locality?.stringByReplacingOccurrencesOfString(" ", withString: "+")
+
+            if street != nil && country != nil && locality != nil && self.placeMark.postalCode != nil {
+                let location = "\(street!)+\(self.placeMark.postalCode!)+\(locality!),+\(country!)"
+                vc.searchParameters = SearchParameters(searchTerm: searchString, location: location, sortedBy: row)
+            } else {
+                let alert = UIAlertController(title: "Something went wrong", message: "It seems like something went wrong with your request, please try again. If this occurs again, please contact the AroundMe team.", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:{ (ACTION :UIAlertAction!)in
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }))
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
             self.locationManager.stopUpdatingLocation()
             vc.loadData()
         }

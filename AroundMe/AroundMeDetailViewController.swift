@@ -50,6 +50,7 @@ class AroundMeDetailViewController: UIViewController, MKMapViewDelegate {
             let dropPin = MKPointAnnotation()
             dropPin.coordinate = pin
             dropPin.title = business!.name
+            dropPin.subtitle = business!.location.address
             mapView.addAnnotation(dropPin)
             //Source center:http://stackoverflow.com/a/28289351/2523667
             let span = MKCoordinateSpanMake(0.010, 0.010)
@@ -58,4 +59,5 @@ class AroundMeDetailViewController: UIViewController, MKMapViewDelegate {
 
         }
     }
+    
 }
