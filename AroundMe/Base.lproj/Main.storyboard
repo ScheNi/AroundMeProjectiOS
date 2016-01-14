@@ -363,7 +363,7 @@
                                 <rect key="frame" x="151" y="289" width="170" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -435,7 +435,7 @@
                                 </constraints>
                                 <state key="normal" title="Search"/>
                                 <connections>
-                                    <segue destination="3LO-H9-EMF" kind="showDetail" id="FHH-pY-3Op"/>
+                                    <action selector="search:" destination="ErM-xx-N7Q" eventType="touchUpInside" id="Rjf-Fz-i4I"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort results on:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LsA-uu-heZ">
@@ -482,11 +482,12 @@
                     <connections>
                         <outlet property="searchTextField" destination="7iT-S8-OC0" id="15d-Te-Y36"/>
                         <outlet property="sortPickerView" destination="4yt-sW-yCB" id="LR3-tt-H5k"/>
+                        <segue destination="3LO-H9-EMF" kind="showDetail" identifier="TableViewResults" id="Ke6-ms-Vit"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y6x-lc-r29" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-161" y="173"/>
+            <point key="canvasLocation" x="-249" y="168"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aaI-xb-oW9">
@@ -518,6 +519,6 @@
         <image name="12388190_10153775262794509_1216905574_n" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Psp-RW-A2u"/>
+        <segue reference="NZg-j5-DJ6"/>
     </inferredMetricsTieBreakers>
 </document>

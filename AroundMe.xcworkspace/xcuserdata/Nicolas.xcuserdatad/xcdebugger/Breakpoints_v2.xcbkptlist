@@ -249,105 +249,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AroundMe/AroundMeTableViewController.swift"
-            timestampString = "473076623.101701"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "AroundMeTableViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AroundMe.AroundMeTableViewController.searchParameters.setter : Swift.Optional&lt;AroundMe.SearchParameters&gt;"
-                  moduleName = "AroundMe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Nicolas/Development/AroundMeProjectiOS/AroundMe/AroundMeTableViewController.swift"
-                  timestampString = "473009600.81211"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "142">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AroundMe.AroundMeTableViewController.searchParameters.materializeForSet : Swift.Optional&lt;AroundMe.SearchParameters&gt;"
-                  moduleName = "AroundMe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Nicolas/Development/AroundMeProjectiOS/AroundMe/AroundMeTableViewController.swift"
-                  timestampString = "473009600.812481"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "28">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AroundMe.AroundMeTableViewController.init (AroundMe.AroundMeTableViewController.Type)(style : C.UITableViewStyle) -&gt; AroundMe.AroundMeTableViewController"
-                  moduleName = "AroundMe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Nicolas/Development/AroundMeProjectiOS/AroundMe/AroundMeTableViewController.swift"
-                  timestampString = "473009600.812695"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "214">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AroundMe.AroundMeTableViewController.init (AroundMe.AroundMeTableViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; AroundMe.AroundMeTableViewController"
-                  moduleName = "AroundMe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Nicolas/Development/AroundMeProjectiOS/AroundMe/AroundMeTableViewController.swift"
-                  timestampString = "473009600.813044"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "269">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AroundMe.AroundMeTableViewController.init (AroundMe.AroundMeTableViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; Swift.Optional&lt;AroundMe.AroundMeTableViewController&gt;"
-                  moduleName = "AroundMe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Nicolas/Development/AroundMeProjectiOS/AroundMe/AroundMeTableViewController.swift"
-                  timestampString = "473009600.813537"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "217">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "AroundMe/AroundMeSearchController.swift"
-            timestampString = "473072713.254406"
+            timestampString = "474473219.445469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "locationManager(_:didUpdateLocations:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -359,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AroundMe/AroundMeSearchController.swift"
-            timestampString = "473072713.254406"
+            timestampString = "474473219.445469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "locationManager(_:didUpdateLocations:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -375,27 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AroundMe/AroundMeSearchController.swift"
-            timestampString = "473072713.254406"
+            timestampString = "474473219.445469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "prepareForSegue(_:sender:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AroundMe/AroundMeSearchController.swift"
-            timestampString = "473072713.254406"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "locationManager(_:didUpdateLocations:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -501,11 +392,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AroundMe/AroundMeTableViewController.swift"
-            timestampString = "473078948.561144"
+            timestampString = "474474404.012598"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -522,8 +413,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "80"
             endingLineNumber = "80"
-            landmarkName = "prepareForSegue(_:sender:)"
-            landmarkType = "5">
+            landmarkName = "AroundMeMapViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -545,17 +436,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AroundMe/AroundMeSearchController.swift"
-            timestampString = "473108684.133112"
+            filePath = "AroundMe/EmptySearchResultController.swift"
+            timestampString = "474491501.151128"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "prepareForSegue(_:sender:)"
-            landmarkType = "5">
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "EmptySearchResultController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

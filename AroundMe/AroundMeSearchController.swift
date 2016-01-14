@@ -10,12 +10,19 @@ import UIKit
 import CoreLocation
 import SwiftSpinner
 // picker view: https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/UIKitUICatalog/UIPickerView.html and https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPickerView_Class/
-class AroundMeSearchController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, CLLocationManagerDelegate, UISplitViewControllerDelegate {
+class AroundMeSearchController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, CLLocationManagerDelegate, UISplitViewControllerDelegate, SearchDelegate {
 
     @IBOutlet weak var searchTextField: UITextField!
     
     @IBOutlet weak var sortPickerView: UIPickerView!
+
+    let service=OAuthService()
+    var businesses = [Business]()
+    var searchString: String?
     
+    var region: Region!
+    
+    var searchParameters:SearchParameters?
     
     var locationManager: CLLocationManager!
     
@@ -76,44 +83,88 @@ class AroundMeSearchController: UIViewController, UIPickerViewDataSource, UIPick
         return Filters.sortFilters[row]
     }
     
+    @IBAction func search(sender: UIButton) {
+        //Source trim: http://stackoverflow.com/a/26797958/2523667
+
+        
+        if (self.searchTextField.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == "") {
+            // If user hasn't filled anything in, use the default in Filters
+            searchString = Filters.defaultSearchString
+        } else {
+            searchString = searchTextField.text!
+        }
+        
+        let row = sortPickerView.selectedRowInComponent(0)
+        let street = self.placeMark.name?.stringByReplacingOccurrencesOfString(" ", withString: "+")
+        let country = self.placeMark.country?.stringByReplacingOccurrencesOfString(" ", withString: "+")
+        let locality = self.placeMark.locality?.stringByReplacingOccurrencesOfString(" ", withString: "+")
+        
+        if street != nil && country != nil && locality != nil && self.placeMark.postalCode != nil {
+            let location = "\(street!)+\(self.placeMark.postalCode!)+\(locality!),+\(country!)"
+            searchParameters = SearchParameters(searchTerm: searchString!, location: location, sortedBy: row)
+        } else {
+            let alert = UIAlertController(title: "Something went wrong", message: "It seems like something went wrong with your request, please try again. If this occurs again, please contact the AroundMe team.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:{ (ACTION :UIAlertAction!)in
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        loadData()
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if let vc = (segue.destinationViewController as! UINavigationController).topViewController as? AroundMeTableViewController {
-            //Source trim: http://stackoverflow.com/a/26797958/2523667
-            let searchString: String
-            
-            if (self.searchTextField.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == "") {
-                // If user hasn't filled anything in, use the default in Filters
-                searchString = Filters.defaultSearchString
-            } else {
-                searchString = searchTextField.text!
-            }
             vc.title = searchString
-            let row = sortPickerView.selectedRowInComponent(0)
-            let street = self.placeMark.name?.stringByReplacingOccurrencesOfString(" ", withString: "+")
-            let country = self.placeMark.country?.stringByReplacingOccurrencesOfString(" ", withString: "+")
-            let locality = self.placeMark.locality?.stringByReplacingOccurrencesOfString(" ", withString: "+")
-
-            if street != nil && country != nil && locality != nil && self.placeMark.postalCode != nil {
-                let location = "\(street!)+\(self.placeMark.postalCode!)+\(locality!),+\(country!)"
-                vc.searchParameters = SearchParameters(searchTerm: searchString, location: location, sortedBy: row)
-            } else {
-                let alert = UIAlertController(title: "Something went wrong", message: "It seems like something went wrong with your request, please try again. If this occurs again, please contact the AroundMe team.", preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:{ (ACTION :UIAlertAction!)in
-                    self.dismissViewControllerAnimated(true, completion: nil)
-                }))
-                self.presentViewController(alert, animated: true, completion: nil)
-            }
+            vc.businesses = businesses
+            vc.region = region
+            vc.searchDelegate = self
             self.locationManager.stopUpdatingLocation()
-            vc.loadData()
         }
         
     }
+    
+    func loadData() {
+        if let params = searchParameters {
+            if (params.loadedFirstTime == true) { SwiftSpinner.show(searchParameters!.searchTerm) }
+            self.service.searchAroundMe(params,
+                success: { (data, response) -> Void in
+                    print(response)
+                    self.businesses += ParseService.parseBusiness(data)
+                    if self.businesses.count == 0 {
+                        let alert = UIAlertController(title: "Couldn't find any results", message: "It seems like we couldn't find any result for \(self.searchString!). Try to search for something else please.", preferredStyle: UIAlertControllerStyle.Alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:{ (ACTION :UIAlertAction!)in
+                            self.dismissViewControllerAnimated(true, completion: nil)
+                        }))
+                        if (params.loadedFirstTime == true) { SwiftSpinner.hide() }
+                        self.presentViewController(alert, animated: true, completion: nil)
+                    } else {
+                        self.region = ParseService.parseRegion(data)
+                        if (params.loadedFirstTime == true) { SwiftSpinner.hide() }
+                
+                        self.performSegueWithIdentifier(Constants.TableViewResultSeque, sender: nil)
+                    }
+                })
+                { (error) -> Void in
+                    print(error)
+            }
+        }
+    }
+    
     
     override func viewWillAppear(animated: Bool) {
         if placeMark == nil {
             SwiftSpinner.show("Getting your location")
         }
+        self.businesses = []
+        self.searchString = nil
+        self.searchParameters = nil
         locationManager.startUpdatingLocation()
     }
+}
+
+protocol SearchDelegate {
+    var searchString: String? {get}
+    var searchParameters:SearchParameters? {get set}
+    func loadData()
 }

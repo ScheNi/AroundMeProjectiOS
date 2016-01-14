@@ -13,11 +13,9 @@ import SwiftSpinner
 
 
 class AroundMeTableViewController: UITableViewController {
+
     
-    let service=OAuthService()
-    
-    
-    var searchParameters:SearchParameters?
+    var searchDelegate: SearchDelegate?
     
     var businesses = [Business]() {
         didSet {
@@ -37,32 +35,18 @@ class AroundMeTableViewController: UITableViewController {
         tableView.addInfiniteScrollWithHandler { (scrollView) -> Void in
             let tableView = scrollView as! UITableView
             
-            if self.searchParameters != nil {
-                self.searchParameters?.increaseOffset()
-                self.loadData()
+            if let search = self.searchDelegate {
+                if search.searchParameters != nil {
+                    //search is immutable...
+                    self.searchDelegate!.searchParameters?.increaseOffset()
+                    search.loadData()
+                }
             }
-            
             
             tableView.finishInfiniteScroll()
         }
         
         
-    }
-    
-    func loadData() {
-        if let params = searchParameters {
-            if (params.loadedFirstTime == true) { SwiftSpinner.show(searchParameters!.searchTerm) }
-            self.service.searchAroundMe(params,
-                success: { (data, response) -> Void in
-                    print(response)
-                    self.businesses += ParseService.parseBusiness(data)
-                    self.region = ParseService.parseRegion(data)
-                    if (params.loadedFirstTime == true) { SwiftSpinner.hide() }
-                })
-                { (error) -> Void in
-                    print(error)
-                }
-        }
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -96,14 +80,8 @@ class AroundMeTableViewController: UITableViewController {
     }
 
 
-    private struct AroundMe {
-        static let TableCell: String = "AroundMeCell"
-    }
-
-
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(AroundMe.TableCell, forIndexPath: indexPath) as! AroundMeTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.TableCell, forIndexPath: indexPath) as! AroundMeTableViewCell
         
         cell.position = indexPath.row
         cell.business = businesses[indexPath.row]
