@@ -24,7 +24,6 @@ class AroundMeTableViewController: UITableViewController {
     }
     var region: Region!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.estimatedRowHeight = tableView.rowHeight
@@ -34,16 +33,19 @@ class AroundMeTableViewController: UITableViewController {
         
         tableView.addInfiniteScrollWithHandler { (scrollView) -> Void in
             let tableView = scrollView as! UITableView
-            
+        
             if let search = self.searchDelegate {
                 if search.searchParameters != nil {
-                    //search is immutable...
-                    self.searchDelegate!.searchParameters?.increaseOffset()
-                    search.loadData()
+                    //search is immutable...<#T##(failure: NSError) -> ()#>
+                    search.loadMoreData({(data, response) -> Void in
+                        self.businesses += ParseService.parseBusiness(data)
+                        tableView.finishInfiniteScroll()
+                    })
                 }
+                
             }
             
-            tableView.finishInfiniteScroll()
+            
         }
         
         

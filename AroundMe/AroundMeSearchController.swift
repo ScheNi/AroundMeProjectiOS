@@ -95,6 +95,7 @@ class AroundMeSearchController: UIViewController, UIPickerViewDataSource, UIPick
         }
         
         let row = sortPickerView.selectedRowInComponent(0)
+        //Replace spaces with '+'
         let street = self.placeMark.name?.stringByReplacingOccurrencesOfString(" ", withString: "+")
         let country = self.placeMark.country?.stringByReplacingOccurrencesOfString(" ", withString: "+")
         let locality = self.placeMark.locality?.stringByReplacingOccurrencesOfString(" ", withString: "+")
@@ -132,6 +133,7 @@ class AroundMeSearchController: UIViewController, UIPickerViewDataSource, UIPick
                     print(response)
                     self.businesses += ParseService.parseBusiness(data)
                     if self.businesses.count == 0 {
+                        //Show dialog
                         let alert = UIAlertController(title: "Couldn't find any results", message: "It seems like we couldn't find any result for \(self.searchString!). Try to search for something else please.", preferredStyle: UIAlertControllerStyle.Alert)
                         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:{ (ACTION :UIAlertAction!)in
                             self.dismissViewControllerAnimated(true, completion: nil)
@@ -139,16 +141,23 @@ class AroundMeSearchController: UIViewController, UIPickerViewDataSource, UIPick
                         if (params.loadedFirstTime == true) { SwiftSpinner.hide() }
                         self.presentViewController(alert, animated: true, completion: nil)
                     } else {
-                        self.region = ParseService.parseRegion(data)
+                        //Perform segue to tableview of results
                         if (params.loadedFirstTime == true) { SwiftSpinner.hide() }
-                
+                        self.region = ParseService.parseRegion(data)
+                        
                         self.performSegueWithIdentifier(Constants.TableViewResultSeque, sender: nil)
+
                     }
                 })
                 { (error) -> Void in
                     print(error)
             }
         }
+    }
+    
+    func loadMoreData(success: (data:NSData, response: NSHTTPURLResponse) -> ()) {
+        self.searchParameters!.increaseOffset()
+        self.service.searchAroundMe(self.searchParameters!, success: success, failure: {(error) -> Void in print(error)})
     }
     
     
@@ -166,5 +175,5 @@ class AroundMeSearchController: UIViewController, UIPickerViewDataSource, UIPick
 protocol SearchDelegate {
     var searchString: String? {get}
     var searchParameters:SearchParameters? {get set}
-    func loadData()
+    func loadMoreData(success: (data:NSData, response: NSHTTPURLResponse) -> ())
 }
