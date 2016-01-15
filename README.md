@@ -36,8 +36,11 @@ Bij het maken van deze applicatie waren volgende zaken van belang:
 * Auto layout
 * Segue
 * Model-View-Controller en Delegation.
+* The App Life Cycle
 * Verschillende UI elementen waaronder: MapView, UIButton, UIPickerView,...
 * ...
+
+Ik denk dat ik de belangrijkste 'hoofd'zaken heb opgenoemd, het kan zijn dat ik er nog een paar vergeten ben.
 
 ### Applicatie gebruiken
 Ik maak gebruik van CocoaPods als dependency manager. Normaal zitten de pods mee in deze github repository, maar voor de zekerheid run je best eerst de volgende commando's vanuit de terminal:  
