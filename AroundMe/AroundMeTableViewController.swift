@@ -7,9 +7,7 @@
 //
 
 import UIKit
-import CoreLocation
 import UIScrollView_InfiniteScroll
-import SwiftSpinner
 
 
 class AroundMeTableViewController: UITableViewController, TableViewDelegate {
