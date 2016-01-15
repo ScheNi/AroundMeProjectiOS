@@ -36,10 +36,14 @@ class AroundMeTableViewController: UITableViewController {
         
             if let search = self.searchDelegate {
                 if search.searchParameters != nil {
-                    //search is immutable...<#T##(failure: NSError) -> ()#>
+                    //search is immutable...
                     search.loadMoreData({(data, response) -> Void in
                         self.businesses += ParseService.parseBusiness(data)
                         tableView.finishInfiniteScroll()
+                    }, failure: {(error) -> Void in
+                        //there are no more items to be fetched
+                        tableView.finishInfiniteScroll()
+                    
                     })
                 }
                 

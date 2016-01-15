@@ -142,11 +142,10 @@ class AroundMeSearchController: UIViewController, UIPickerViewDataSource, UIPick
                         self.presentViewController(alert, animated: true, completion: nil)
                     } else {
                         //Perform segue to tableview of results
-                        if (params.loadedFirstTime == true) { SwiftSpinner.hide() }
                         self.region = ParseService.parseRegion(data)
                         
                         self.performSegueWithIdentifier(Constants.TableViewResultSeque, sender: nil)
-
+                        SwiftSpinner.hide()
                     }
                 })
                 { (error) -> Void in
@@ -155,9 +154,9 @@ class AroundMeSearchController: UIViewController, UIPickerViewDataSource, UIPick
         }
     }
     
-    func loadMoreData(success: (data:NSData, response: NSHTTPURLResponse) -> ()) {
+    func loadMoreData(success: (data:NSData, response: NSHTTPURLResponse) -> (), failure: (error: NSError) -> ()) {
         self.searchParameters!.increaseOffset()
-        self.service.searchAroundMe(self.searchParameters!, success: success, failure: {(error) -> Void in print(error)})
+        self.service.searchAroundMe(self.searchParameters!, success: success, failure: failure)
     }
     
     
@@ -175,5 +174,5 @@ class AroundMeSearchController: UIViewController, UIPickerViewDataSource, UIPick
 protocol SearchDelegate {
     var searchString: String? {get}
     var searchParameters:SearchParameters? {get set}
-    func loadMoreData(success: (data:NSData, response: NSHTTPURLResponse) -> ())
+    func loadMoreData(success: (data:NSData, response: NSHTTPURLResponse) -> (), failure: (error: NSError) -> ())
 }
