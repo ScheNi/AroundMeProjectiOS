@@ -12,6 +12,7 @@
 		378B86BF1C3298D10045DB8A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378B86BE1C3298D10045DB8A /* SystemConfiguration.framework */; };
 		37A0001B1C273E1A00815FA2 /* Properties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37A0001A1C273E1A00815FA2 /* Properties.plist */; settings = {ASSET_TAGS = (); }; };
 		37A1B9F11C306F1F006D55F3 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A1B9F01C306F1F006D55F3 /* Filters.swift */; settings = {ASSET_TAGS = (); }; };
+		37A75B981C49078F00CAB76B /* AroundMeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A75B971C49078F00CAB76B /* AroundMeTabBarController.swift */; settings = {ASSET_TAGS = (); }; };
 		37BA369A1C28A17000190E5F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37BA36991C28A17000190E5F /* CoreLocation.framework */; };
 		37BA369C1C28B00000190E5F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37BA369B1C28B00000190E5F /* MapKit.framework */; };
 		37CD85FB1C28BCAB00836927 /* AroundMeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CD85FA1C28BCAB00836927 /* AroundMeDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -58,6 +59,7 @@
 		378B86BE1C3298D10045DB8A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		37A0001A1C273E1A00815FA2 /* Properties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Properties.plist; sourceTree = "<group>"; };
 		37A1B9F01C306F1F006D55F3 /* Filters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
+		37A75B971C49078F00CAB76B /* AroundMeTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AroundMeTabBarController.swift; sourceTree = "<group>"; };
 		37BA36991C28A17000190E5F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		37BA369B1C28B00000190E5F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		37CD85FA1C28BCAB00836927 /* AroundMeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AroundMeDetailViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				37CD85FC1C2947E500836927 /* AroundMeMapViewController.swift */,
 				37CD85FE1C294D6E00836927 /* AroundMeSearchController.swift */,
 				37E0D7371C31CE3300010795 /* EmptySearchResultController.swift */,
+				37A75B971C49078F00CAB76B /* AroundMeTabBarController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				37F3A3B61C25589300E03C36 /* AppDelegate.swift in Sources */,
 				37CD85FB1C28BCAB00836927 /* AroundMeDetailViewController.swift in Sources */,
 				3779EBF81C3187C7003A46CB /* SearchParameters.swift in Sources */,
+				37A75B981C49078F00CAB76B /* AroundMeTabBarController.swift in Sources */,
 				37F26B461C26E6B000E3093F /* Location.swift in Sources */,
 				37E8CE0E1C47F57A001BB773 /* Constants.swift in Sources */,
 				37A1B9F11C306F1F006D55F3 /* Filters.swift in Sources */,

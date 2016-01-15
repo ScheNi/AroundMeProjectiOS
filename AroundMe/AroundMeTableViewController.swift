@@ -12,7 +12,7 @@ import UIScrollView_InfiniteScroll
 import SwiftSpinner
 
 
-class AroundMeTableViewController: UITableViewController {
+class AroundMeTableViewController: UITableViewController, TableViewDelegate {
 
     
     var searchDelegate: SearchDelegate?
@@ -22,10 +22,12 @@ class AroundMeTableViewController: UITableViewController {
             tableView.reloadData()
         }
     }
+    
     var region: Region!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
         
@@ -54,6 +56,7 @@ class AroundMeTableViewController: UITableViewController {
         
         
     }
+    
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let tableCell = sender as? AroundMeTableViewCell {
@@ -96,4 +99,9 @@ class AroundMeTableViewController: UITableViewController {
         return cell
     }
 
+}
+
+protocol TableViewDelegate {
+    var businesses: [Business] {get}
+    var region: Region! {get}
 }

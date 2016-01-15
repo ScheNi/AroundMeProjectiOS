@@ -115,12 +115,15 @@ class AroundMeSearchController: UIViewController, UIPickerViewDataSource, UIPick
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if let vc = (segue.destinationViewController as! UINavigationController).topViewController as? AroundMeTableViewController {
-            vc.title = searchString
-            vc.businesses = businesses
-            vc.region = region
-            vc.searchDelegate = self
-            self.locationManager.stopUpdatingLocation()
+        if let tabVc = (segue.destinationViewController as! UINavigationController).topViewController as? UITabBarController {
+            tabVc.title = searchString
+            if let vc = tabVc.viewControllers![0] as? AroundMeTableViewController {
+                vc.businesses = businesses
+                vc.region = region
+                vc.searchDelegate = self
+                self.locationManager.stopUpdatingLocation()
+            }
+            
         }
         
     }
@@ -131,22 +134,23 @@ class AroundMeSearchController: UIViewController, UIPickerViewDataSource, UIPick
             self.service.searchAroundMe(params,
                 success: { (data, response) -> Void in
                     print(response)
-                    self.businesses += ParseService.parseBusiness(data)
+                    self.businesses = ParseService.parseBusiness(data)
                     if self.businesses.count == 0 {
                         //Show dialog
                         let alert = UIAlertController(title: "Couldn't find any results", message: "It seems like we couldn't find any result for \(self.searchString!). Try to search for something else please.", preferredStyle: UIAlertControllerStyle.Alert)
                         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:{ (ACTION :UIAlertAction!)in
                             self.dismissViewControllerAnimated(true, completion: nil)
                         }))
-                        if (params.loadedFirstTime == true) { SwiftSpinner.hide() }
+                        
                         self.presentViewController(alert, animated: true, completion: nil)
                     } else {
                         //Perform segue to tableview of results
                         self.region = ParseService.parseRegion(data)
                         
                         self.performSegueWithIdentifier(Constants.TableViewResultSeque, sender: nil)
-                        SwiftSpinner.hide()
+                        
                     }
+                    if (params.loadedFirstTime == true) { SwiftSpinner.hide() }
                 })
                 { (error) -> Void in
                     print(error)

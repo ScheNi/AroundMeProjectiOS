@@ -83,4 +83,12 @@ class AroundMeMapViewController: UIViewController, MKMapViewDelegate {
             vc.business = businesses[currenBusiness]
         }
     }
+    
+    override func viewDidLoad() {
+        if let tab = tabBarController?.viewControllers![0] as? TableViewDelegate {
+            //get businesses and region from tableviewcontroller
+            self.businesses = tab.businesses
+            self.region = tab.region
+        }
+    }
 }
