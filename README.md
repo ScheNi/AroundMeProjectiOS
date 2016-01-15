@@ -32,15 +32,18 @@ De volgende zaken heb ik ook nog gebruikt:
 * [MapKit](https://developer.apple.com/library/ios/documentation/MapKit/Reference/MapKit_Framework_Reference/): Voor het weergeven van een map met bepaalde zaken erop (bedrijven en eige positie).
 
 ### Applicatie gebruiken
-Ik maak gebruik van CocoaPods als dependency manager. Normaal zitten de pods mee in het github project, maar voor de zekerheid run je eerst het volgende commando vanuit de terminal:  
+Ik maak gebruik van CocoaPods als dependency manager. Normaal zitten de pods mee in deze github repository, maar voor de zekerheid run je best eerst de volgende commando's' vanuit de terminal:  
 ```sh
+$ cd AroundMe
 $ pod install
 ```
 
-Na het uitvoeren van het vorige commando is het belangrijk dat je de 'AroundMe.xcworkspace' in plaats van de 'AroundMe.xcodeproj', dit doe als je volgende vanuit de terminal: 
+Na het uitvoeren van het vorige commando is het belangrijk dat je de 'AroundMe.xcworkspace' opent in plaats van  'AroundMe.xcodeproj', dit doe als je volgende vanuit de terminal: 
 ```sh
 $ open AroundMe.xcworkspace
 ```
+De workspace zou nu normaal gezien in xcode moeten openen, en je zou de applicatie moeten kunnen starten.
+
 > Opmerking: Ik heb al gemerkt dat hij de pods soms niet vindt, dit kan opgelost worden door Product > Build For Testing uit te voeren. De oorzaak van dit probleem heb ik nog niet kunnen vinden.
 
 
