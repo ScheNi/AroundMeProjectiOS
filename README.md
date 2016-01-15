@@ -12,10 +12,24 @@ Bij het succesvol uitvoeren van een zoekterm zal er als eerste een scherm met ee
 ##### Map
 Naast het weergeven van de bedrijven in een lijst kan men ook de bedrijven op een map weergeven. Hier wordt een dan een ‘pin’ voor elk bedrijf op de map geplaatst en wordt de map op een manier gepositioneerd dat alle ‘pins’ zichtbaar zijn. Naast de pins staat ook jouw eigen locatie op de map aangeduid. Als je meer informatie over een bedrijf wilt klik je op een pin, dan zal er een ‘popupje’ komen met de naam van het bedrijf en het adres. Als je nog meer informatie wilt over dit bedrijf kan je op deze ‘popup’ klikken. Dan ga je naar de detail pagina voor dat bedrijf, wat staat hieronder beschreven. 
 
+##### Internetverbinding
+Voor deze applicatie is het een must dat je een actieve internetverbinding hebt. Dit wordt dan ook gecontroleerd. Als er geen actieve internetverbinding is zal er een boodschap verschijnen dat dit meldt. Deze boodschap kan op elk moment (op elk scherm, wanneer internetverbinding weg valt) tevoorschijn komen. Wanneer er terug een actieve verbinding is zal deze boodschap terug verdwijnen.
+
 ##### Detail pagina
 Op deze pagina zie je de gegevens van een geselecteerd bedrijf. Deze kan vanuit de lijst geselecteerd zijn, maar ook van op de map. Hier zie je een afbeelding van het bedrijf en relevante bedrijfsgegevens zoals de naam, het adres en hoe ver het van jouw positie is. Hiernaast kan je ook een score van het bedrijf zien en ook het aantal reviews er voor dit bedrijf geschreven zijn. Het bedrijf wordt ook op een map weergeven. Op deze map kan je ook jouw eigen positie terugvinden. 
 
 ### Gebruikte technologieën
+Deze applicatie maakt gebuik van de [Yelp API](https://en.yelp.be/developers/) voor het maken voor de zoekopdrachten.
+
+De volgende zaken heb ik ook nog gebruikt: 
+* [OAuthSwift](https://github.com/OAuthSwift/OAuthSwift): De yelp API maakt gebruik van OAuth voor de requests te authentiseren, deze library zorgt ervoor dat dit heel gemakkelijk gedaan kan worden. Hiermee verstuur ik dus de requests naar yelp.
+* [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON): Hiermee parse ik de json die ik van yelp als response krijg naar Objecten. 
+* [Kingfisher](https://github.com/onevcat/Kingfisher): Met deze library download en cache ik de afbeeldingen.
+* [SwiftSpinner](https://github.com/icanzilb/SwiftSpinner): Deze gebruik ik voor de laad animaties
+* [UIScrollView-InfiniteScroll](https://github.com/pronebird/UIScrollView-InfiniteScroll): Voor het laden van meer bedrijven wanneer men aan het laatste bedrijf komt.
+* [ReachabilitySwift](https://github.com/ashleymills/Reachability.swift): Hiermee kan ik op elk moment kijken of er een actieve internetverbinding is.
+* [CoreLocation](https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CoreLocation_Framework/index.html#//apple_ref/doc/uid/TP40007123): Voor het afhalen van de locatie van een gebruiker.
+* [MapKit](https://developer.apple.com/library/ios/documentation/MapKit/Reference/MapKit_Framework_Reference/): Voor het weergeven van een map met bepaalde zaken erop (bedrijven en eige positie).
 
 ### Applicatie gebruiken
 Ik maak gebruik van CocoaPods als dependency manager. Normaal zitten de pods mee in het github project, maar voor de zekerheid run je eerst het volgende commando vanuit de terminal:  
