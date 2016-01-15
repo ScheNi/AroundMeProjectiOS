@@ -33,10 +33,11 @@ Bij het maken van deze applicatie waren volgende zaken van belang:
 * [CoreLocation](https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CoreLocation_Framework/index.html#//apple_ref/doc/uid/TP40007123): Voor het afhalen van de locatie van een gebruiker.
 * [MapKit](https://developer.apple.com/library/ios/documentation/MapKit/Reference/MapKit_Framework_Reference/): Voor het weergeven van een map met bepaalde zaken erop (bedrijven en eige positie).
 * UINavigationController, UITabBarController, UISplitViewController, UITableViewController,..
-* Auto layout: adhv constraints de views 'responsive' maken
-* Segue:
+* Auto layout
+* Segue
 * Model-View-Controller en Delegation.
 * Verschillende UI elementen waaronder: MapView, UIButton, UIPickerView,...
+* ...
 
 ### Applicatie gebruiken
 Ik maak gebruik van CocoaPods als dependency manager. Normaal zitten de pods mee in deze github repository, maar voor de zekerheid run je best eerst de volgende commando's vanuit de terminal:  
