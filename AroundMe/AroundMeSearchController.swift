@@ -141,6 +141,7 @@ class AroundMeSearchController: UIViewController, UIPickerViewDataSource, UIPick
                         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:{ (ACTION :UIAlertAction!)in
                             self.dismissViewControllerAnimated(true, completion: nil)
                         }))
+                        if (params.loadedFirstTime == true) { SwiftSpinner.hide() }
                         
                         self.presentViewController(alert, animated: true, completion: nil)
                     } else {
@@ -149,8 +150,8 @@ class AroundMeSearchController: UIViewController, UIPickerViewDataSource, UIPick
                         
                         self.performSegueWithIdentifier(Constants.TableViewResultSeque, sender: nil)
                         
+                        if (params.loadedFirstTime == true) { SwiftSpinner.hide() }
                     }
-                    if (params.loadedFirstTime == true) { SwiftSpinner.hide() }
                 })
                 { (error) -> Void in
                     print(error)
