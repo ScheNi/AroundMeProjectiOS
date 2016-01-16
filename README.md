@@ -57,5 +57,6 @@ De workspace zou nu normaal gezien in xcode moeten openen, en je zou de applicat
 
 > Opmerking: Ik heb al gemerkt dat hij de pods soms niet vindt, dit kan opgelost worden door Product > Build For Testing uit te voeren. De oorzaak van dit probleem heb ik nog niet kunnen vinden.
 
+> Opmerking 2: Ik heb zelf soms problemen gehad dat de applicatie niet van de eerste keer de locatie in de emulator wou vinden, gewoon opnieuw run klikken en het werkt wel. Heb op een echt toestel getest en daar werkte het zonder problemen. 
 
 
