@@ -99,10 +99,11 @@ class AroundMeSearchController: UIViewController, UIPickerViewDataSource, UIPick
         let street = self.placeMark.name?.stringByReplacingOccurrencesOfString(" ", withString: "+")
         let country = self.placeMark.country?.stringByReplacingOccurrencesOfString(" ", withString: "+")
         let locality = self.placeMark.locality?.stringByReplacingOccurrencesOfString(" ", withString: "+")
+        let search = self.searchString?.stringByReplacingOccurrencesOfString(" ", withString: "+")
         
         if street != nil && country != nil && locality != nil && self.placeMark.postalCode != nil {
             let location = "\(street!)+\(self.placeMark.postalCode!)+\(locality!),+\(country!)"
-            searchParameters = SearchParameters(searchTerm: searchString!, location: location, sortedBy: row)
+            searchParameters = SearchParameters(searchTerm: search!, location: location, sortedBy: row)
         } else {
             let alert = UIAlertController(title: "Something went wrong", message: "It seems like something went wrong with your request, please try again. If this occurs again, please contact the AroundMe team.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler:{ (ACTION :UIAlertAction!)in
@@ -130,7 +131,7 @@ class AroundMeSearchController: UIViewController, UIPickerViewDataSource, UIPick
     
     func loadData() {
         if let params = searchParameters {
-            if (params.loadedFirstTime == true) { SwiftSpinner.show(searchParameters!.searchTerm) }
+            if (params.loadedFirstTime == true) { SwiftSpinner.show(self.searchString!) }
             self.service.searchAroundMe(params,
                 success: { (data, response) -> Void in
                     print(response)
@@ -173,6 +174,7 @@ class AroundMeSearchController: UIViewController, UIPickerViewDataSource, UIPick
         self.searchString = nil
         self.searchParameters = nil
         locationManager.startUpdatingLocation()
+        
     }
 }
 
